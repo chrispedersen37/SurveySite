@@ -1,0 +1,231 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="SurveySiteModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="AcademicSurveys">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Q1Answer" Type="int" />
+          <Property Name="Q2Answer" Type="int" />
+          <Property Name="Q3Answer" Type="int" />
+          <Property Name="Q4Answer" Type="int" />
+          <Property Name="Q5Answer" Type="int" />
+          <Property Name="Q6Answer" Type="int" />
+          <Property Name="Q7Answer" Type="int" />
+          <Property Name="Q8Answer" Type="int" />
+          <Property Name="Q9Answer" Type="int" />
+          <Property Name="Q10Answer" Type="int" />
+        </EntityType>
+        <EntityType Name="Answers">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="answer" Type="nchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="ExCurSurveys">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Q1Answer" Type="int" />
+          <Property Name="Q2Answer" Type="int" />
+          <Property Name="Q3Answer" Type="int" />
+          <Property Name="Q4Answer" Type="int" />
+          <Property Name="Q5Answer" Type="int" />
+          <Property Name="Q6Answer" Type="int" />
+          <Property Name="Q7Answer" Type="int" />
+          <Property Name="Q8Answer" Type="int" />
+          <Property Name="Q9Answer" Type="int" />
+          <Property Name="Q10Answer" Type="int" />
+        </EntityType>
+        <EntityType Name="FinancialSurveys">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Q1Answer" Type="int" />
+          <Property Name="Q2Answer" Type="int" />
+          <Property Name="Q3Answer" Type="int" />
+          <Property Name="Q4Answer" Type="int" />
+          <Property Name="Q5Answer" Type="int" />
+          <Property Name="Q6Answer" Type="int" />
+          <Property Name="Q7Answer" Type="int" />
+          <Property Name="Q8Answer" Type="int" />
+          <Property Name="Q9Answer" Type="int" />
+          <Property Name="Q10Answer" Type="int" />
+        </EntityType>
+        <EntityContainer Name="SurveySiteModelStoreContainer">
+          <EntitySet Name="AcademicSurveys" EntityType="Self.AcademicSurveys" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Answers" EntityType="Self.Answers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ExCurSurveys" EntityType="Self.ExCurSurveys" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="FinancialSurveys" EntityType="Self.FinancialSurveys" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="SurveySiteModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="SurveySiteEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="AcademicSurveys" EntityType="SurveySiteModel.AcademicSurvey" />
+          <EntitySet Name="Answers" EntityType="SurveySiteModel.Answer" />
+          <EntitySet Name="ExCurSurveys" EntityType="SurveySiteModel.ExCurSurvey" />
+          <EntitySet Name="FinancialSurveys" EntityType="SurveySiteModel.FinancialSurvey" />
+        </EntityContainer>
+        <EntityType Name="AcademicSurvey">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Q1Answer" Type="Int32" />
+          <Property Name="Q2Answer" Type="Int32" />
+          <Property Name="Q3Answer" Type="Int32" />
+          <Property Name="Q4Answer" Type="Int32" />
+          <Property Name="Q5Answer" Type="Int32" />
+          <Property Name="Q6Answer" Type="Int32" />
+          <Property Name="Q7Answer" Type="Int32" />
+          <Property Name="Q8Answer" Type="Int32" />
+          <Property Name="Q9Answer" Type="Int32" />
+          <Property Name="Q10Answer" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Answer">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="answer1" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+        </EntityType>
+        <EntityType Name="ExCurSurvey">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Q1Answer" Type="Int32" />
+          <Property Name="Q2Answer" Type="Int32" />
+          <Property Name="Q3Answer" Type="Int32" />
+          <Property Name="Q4Answer" Type="Int32" />
+          <Property Name="Q5Answer" Type="Int32" />
+          <Property Name="Q6Answer" Type="Int32" />
+          <Property Name="Q7Answer" Type="Int32" />
+          <Property Name="Q8Answer" Type="Int32" />
+          <Property Name="Q9Answer" Type="Int32" />
+          <Property Name="Q10Answer" Type="Int32" />
+        </EntityType>
+        <EntityType Name="FinancialSurvey">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Q1Answer" Type="Int32" />
+          <Property Name="Q2Answer" Type="Int32" />
+          <Property Name="Q3Answer" Type="Int32" />
+          <Property Name="Q4Answer" Type="Int32" />
+          <Property Name="Q5Answer" Type="Int32" />
+          <Property Name="Q6Answer" Type="Int32" />
+          <Property Name="Q7Answer" Type="Int32" />
+          <Property Name="Q8Answer" Type="Int32" />
+          <Property Name="Q9Answer" Type="Int32" />
+          <Property Name="Q10Answer" Type="Int32" />
+        </EntityType>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="SurveySiteModelStoreContainer" CdmEntityContainer="SurveySiteEntities">
+          <EntitySetMapping Name="AcademicSurveys">
+            <EntityTypeMapping TypeName="SurveySiteModel.AcademicSurvey">
+              <MappingFragment StoreEntitySet="AcademicSurveys">
+                <ScalarProperty Name="Q10Answer" ColumnName="Q10Answer" />
+                <ScalarProperty Name="Q9Answer" ColumnName="Q9Answer" />
+                <ScalarProperty Name="Q8Answer" ColumnName="Q8Answer" />
+                <ScalarProperty Name="Q7Answer" ColumnName="Q7Answer" />
+                <ScalarProperty Name="Q6Answer" ColumnName="Q6Answer" />
+                <ScalarProperty Name="Q5Answer" ColumnName="Q5Answer" />
+                <ScalarProperty Name="Q4Answer" ColumnName="Q4Answer" />
+                <ScalarProperty Name="Q3Answer" ColumnName="Q3Answer" />
+                <ScalarProperty Name="Q2Answer" ColumnName="Q2Answer" />
+                <ScalarProperty Name="Q1Answer" ColumnName="Q1Answer" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Answers">
+            <EntityTypeMapping TypeName="SurveySiteModel.Answer">
+              <MappingFragment StoreEntitySet="Answers">
+                <ScalarProperty Name="answer1" ColumnName="answer" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ExCurSurveys">
+            <EntityTypeMapping TypeName="SurveySiteModel.ExCurSurvey">
+              <MappingFragment StoreEntitySet="ExCurSurveys">
+                <ScalarProperty Name="Q10Answer" ColumnName="Q10Answer" />
+                <ScalarProperty Name="Q9Answer" ColumnName="Q9Answer" />
+                <ScalarProperty Name="Q8Answer" ColumnName="Q8Answer" />
+                <ScalarProperty Name="Q7Answer" ColumnName="Q7Answer" />
+                <ScalarProperty Name="Q6Answer" ColumnName="Q6Answer" />
+                <ScalarProperty Name="Q5Answer" ColumnName="Q5Answer" />
+                <ScalarProperty Name="Q4Answer" ColumnName="Q4Answer" />
+                <ScalarProperty Name="Q3Answer" ColumnName="Q3Answer" />
+                <ScalarProperty Name="Q2Answer" ColumnName="Q2Answer" />
+                <ScalarProperty Name="Q1Answer" ColumnName="Q1Answer" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FinancialSurveys">
+            <EntityTypeMapping TypeName="SurveySiteModel.FinancialSurvey">
+              <MappingFragment StoreEntitySet="FinancialSurveys">
+                <ScalarProperty Name="Q10Answer" ColumnName="Q10Answer" />
+                <ScalarProperty Name="Q9Answer" ColumnName="Q9Answer" />
+                <ScalarProperty Name="Q8Answer" ColumnName="Q8Answer" />
+                <ScalarProperty Name="Q7Answer" ColumnName="Q7Answer" />
+                <ScalarProperty Name="Q6Answer" ColumnName="Q6Answer" />
+                <ScalarProperty Name="Q5Answer" ColumnName="Q5Answer" />
+                <ScalarProperty Name="Q4Answer" ColumnName="Q4Answer" />
+                <ScalarProperty Name="Q3Answer" ColumnName="Q3Answer" />
+                <ScalarProperty Name="Q2Answer" ColumnName="Q2Answer" />
+                <ScalarProperty Name="Q1Answer" ColumnName="Q1Answer" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
